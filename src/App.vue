@@ -1,85 +1,133 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+  <header class="flex justify-end bg-white p-2">
+    <MenuBtn />
   </header>
 
+  <AsideMenu :menuItems="menuItems" />
   <RouterView />
 </template>
 
+<script setup>
+import { RouterView } from 'vue-router'
+import MenuBtn from '@/components/MenuBtn.vue'
+import AsideMenu from '@/components/AsideMenu.vue'
+
+import { ref } from 'vue'
+const menuItems = ref([
+  {
+    key: '64f',
+    text: '好喝黑糖',
+    children: [
+      {
+        key: '445',
+        text: '黑糖鮮奶',
+        children: [
+          {
+            key: '37a',
+            text: '黑糖珍珠鮮奶'
+          },
+          {
+            key: 'feb',
+            text: '黑糖芋圓鮮奶'
+          },
+          {
+            key: '59c',
+            text: '黑糖蒟蒻鮮奶'
+          }
+        ]
+      },
+      {
+        key: '29e',
+        text: '黑糖冬瓜',
+        children: [
+          {
+            key: 'ac3',
+            text: '黑糖冬瓜牛奶'
+          },
+          {
+            key: 'ca0',
+            text: '黑糖冬瓜珍珠'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    key: '6c3',
+    text: '茶',
+    children: [
+      {
+        key: '5dc',
+        text: '烏龍綠'
+      },
+      {
+        key: 'b5f',
+        text: '綠茶'
+      },
+      {
+        key: 'b09',
+        text: '紅茶'
+      },
+      {
+        key: '887',
+        text: '青茶'
+      }
+    ]
+  },
+  {
+    key: 'c81',
+    text: '咖啡',
+    children: [
+      {
+        key: 'e02',
+        text: '黑咖啡',
+        children: [
+          {
+            key: 'd20',
+            text: '濃縮咖啡'
+          },
+          {
+            key: '1f8',
+            text: '美式咖啡'
+          }
+        ]
+      },
+      {
+        key: 'd7a',
+        text: '牛奶咖啡',
+        children: [
+          {
+            key: 'c09',
+            text: '拿鐵',
+            children: [
+              {
+                key: 'db2',
+                text: '黑糖拿鐵'
+              },
+              {
+                key: '9f6',
+                text: '榛果拿鐵'
+              },
+              {
+                key: 'b61',
+                text: '香草拿鐵'
+              }
+            ]
+          },
+          {
+            key: '9ac',
+            text: '卡布奇諾'
+          },
+          {
+            key: 'ce8',
+            text: '摩卡'
+          }
+        ]
+      }
+    ]
+  }
+])
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
