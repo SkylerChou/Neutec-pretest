@@ -1,5 +1,5 @@
 <template>
-  <header class="flex justify-end bg-white p-2">
+  <header class="fixed top-0 w-full flex justify-end bg-white p-2">
     <MenuBtn @click="controSideMenu" />
   </header>
 
