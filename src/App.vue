@@ -8,11 +8,11 @@
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router'
-import MenuBtn from '@/components/MenuBtn.vue'
-import AsideMenu from '@/components/AsideMenu.vue'
+import { RouterView } from 'vue-router';
+import MenuBtn from '@/components/MenuBtn.vue';
+import AsideMenu from '@/components/AsideMenu.vue';
 
-import { ref } from 'vue'
+import { ref } from 'vue';
 const menuItems = ref([
   {
     key: '64f',
@@ -24,17 +24,17 @@ const menuItems = ref([
         children: [
           {
             key: '37a',
-            text: '黑糖珍珠鮮奶'
+            text: '黑糖珍珠鮮奶',
           },
           {
             key: 'feb',
-            text: '黑糖芋圓鮮奶'
+            text: '黑糖芋圓鮮奶',
           },
           {
             key: '59c',
-            text: '黑糖蒟蒻鮮奶'
-          }
-        ]
+            text: '黑糖蒟蒻鮮奶',
+          },
+        ],
       },
       {
         key: '29e',
@@ -42,15 +42,15 @@ const menuItems = ref([
         children: [
           {
             key: 'ac3',
-            text: '黑糖冬瓜牛奶'
+            text: '黑糖冬瓜牛奶',
           },
           {
             key: 'ca0',
-            text: '黑糖冬瓜珍珠'
-          }
-        ]
-      }
-    ]
+            text: '黑糖冬瓜珍珠',
+          },
+        ],
+      },
+    ],
   },
   {
     key: '6c3',
@@ -58,21 +58,21 @@ const menuItems = ref([
     children: [
       {
         key: '5dc',
-        text: '烏龍綠'
+        text: '烏龍綠',
       },
       {
         key: 'b5f',
-        text: '綠茶'
+        text: '綠茶',
       },
       {
         key: 'b09',
-        text: '紅茶'
+        text: '紅茶',
       },
       {
         key: '887',
-        text: '青茶'
-      }
-    ]
+        text: '青茶',
+      },
+    ],
   },
   {
     key: 'c81',
@@ -84,13 +84,13 @@ const menuItems = ref([
         children: [
           {
             key: 'd20',
-            text: '濃縮咖啡'
+            text: '濃縮咖啡',
           },
           {
             key: '1f8',
-            text: '美式咖啡'
-          }
-        ]
+            text: '美式咖啡',
+          },
+        ],
       },
       {
         key: 'd7a',
@@ -102,32 +102,31 @@ const menuItems = ref([
             children: [
               {
                 key: 'db2',
-                text: '黑糖拿鐵'
+                text: '黑糖拿鐵',
               },
               {
                 key: '9f6',
-                text: '榛果拿鐵'
+                text: '榛果拿鐵',
               },
               {
                 key: 'b61',
-                text: '香草拿鐵'
-              }
-            ]
+                text: '香草拿鐵',
+              },
+            ],
           },
           {
             key: '9ac',
-            text: '卡布奇諾'
+            text: '卡布奇諾',
           },
           {
             key: 'ce8',
-            text: '摩卡'
-          }
-        ]
-      }
-    ]
-  }
-])
+            text: '摩卡',
+          },
+        ],
+      },
+    ],
+  },
+]);
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

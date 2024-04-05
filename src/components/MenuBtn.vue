@@ -5,8 +5,7 @@
 </template>
 
 <script setup>
-import IconBars from './icons/IconBars.vue'
+import IconBars from './icons/IconBars.vue';
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
