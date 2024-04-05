@@ -1,132 +1,44 @@
 <template>
   <header class="flex justify-end bg-white p-2">
-    <MenuBtn />
+    <MenuBtn @click="controSideMenu" />
   </header>
 
-  <AsideMenu :menuItems="menuItems" />
-  <RouterView />
+  <Transition
+    enter-active-class="transition-all ease duration-300"
+    leave-active-class="transition-all duration-300"
+    enter-from-class="translate-x-full"
+    leave-to-class="translate-x-full"
+  >
+    <AsideMenu :menuList="menuList" v-show="isOpen" />
+  </Transition>
+
+  <main class="min-h-dvh" @click="closeSideMenu">
+    <RouterView />
+  </main>
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router';
 import MenuBtn from '@/components/MenuBtn.vue';
 import AsideMenu from '@/components/AsideMenu.vue';
-
 import { ref } from 'vue';
-const menuItems = ref([
-  {
-    key: '64f',
-    text: '好喝黑糖',
-    children: [
-      {
-        key: '445',
-        text: '黑糖鮮奶',
-        children: [
-          {
-            key: '37a',
-            text: '黑糖珍珠鮮奶',
-          },
-          {
-            key: 'feb',
-            text: '黑糖芋圓鮮奶',
-          },
-          {
-            key: '59c',
-            text: '黑糖蒟蒻鮮奶',
-          },
-        ],
-      },
-      {
-        key: '29e',
-        text: '黑糖冬瓜',
-        children: [
-          {
-            key: 'ac3',
-            text: '黑糖冬瓜牛奶',
-          },
-          {
-            key: 'ca0',
-            text: '黑糖冬瓜珍珠',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: '6c3',
-    text: '茶',
-    children: [
-      {
-        key: '5dc',
-        text: '烏龍綠',
-      },
-      {
-        key: 'b5f',
-        text: '綠茶',
-      },
-      {
-        key: 'b09',
-        text: '紅茶',
-      },
-      {
-        key: '887',
-        text: '青茶',
-      },
-    ],
-  },
-  {
-    key: 'c81',
-    text: '咖啡',
-    children: [
-      {
-        key: 'e02',
-        text: '黑咖啡',
-        children: [
-          {
-            key: 'd20',
-            text: '濃縮咖啡',
-          },
-          {
-            key: '1f8',
-            text: '美式咖啡',
-          },
-        ],
-      },
-      {
-        key: 'd7a',
-        text: '牛奶咖啡',
-        children: [
-          {
-            key: 'c09',
-            text: '拿鐵',
-            children: [
-              {
-                key: 'db2',
-                text: '黑糖拿鐵',
-              },
-              {
-                key: '9f6',
-                text: '榛果拿鐵',
-              },
-              {
-                key: 'b61',
-                text: '香草拿鐵',
-              },
-            ],
-          },
-          {
-            key: '9ac',
-            text: '卡布奇諾',
-          },
-          {
-            key: 'ce8',
-            text: '摩卡',
-          },
-        ],
-      },
-    ],
-  },
-]);
+import { MenuTreeList } from '@/mock/data';
+
+/** @const {array} 側邊欄頁面清單 */
+const menuList = ref(MenuTreeList);
+
+/** @const {boolean} 是否開啟側邊欄 */
+const isOpen = ref(false);
+
+/** @func 控制側邊欄方法 */
+function controSideMenu() {
+  isOpen.value = !isOpen.value;
+}
+
+/** @func 關閉側邊欄 */
+function closeSideMenu() {
+  isOpen.value = false;
+}
 </script>
 
 <style scoped></style>
