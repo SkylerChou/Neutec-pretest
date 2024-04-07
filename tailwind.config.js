@@ -14,8 +14,8 @@ export default {
           from: { opacity: 1 },
         },
         slideInLeft: {
-          '0%': { transform: ' translateX(0)' },
-          '100%': { transform: 'translateX(900%)' },
+          '0%': { transform: ' translate(0,0)' },
+          '100%': { transform: 'translate(65vw,0)' },
         },
       },
     },
