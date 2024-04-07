@@ -1,35 +1,11 @@
-# neutec_test
+## Live Demo
 
-This template should help get you started developing with Vue 3 in Vite.
+[GitHub Page](https://skylerchou.github.io/pretest/)
 
-## Recommended IDE Setup
+## 額外需求
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### 側邊選單
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+1. 目前以遞迴渲染已經解決
+2. 使用 localStorage 來記錄上次選取的項目。
+3. 或許可以改成用 Map 的方式改寫，在查找對應 key 時會更為快速，時間複雜度為 O(1)

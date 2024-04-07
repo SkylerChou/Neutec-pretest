@@ -9,7 +9,7 @@
     enter-from-class="translate-x-full"
     leave-to-class="translate-x-full"
   >
-    <AsideMenu :menuList="menuList" v-show="isOpen" />
+    <AsideMenu :menuList="menuList" v-show="isOpen" class="z-20" />
   </Transition>
 
   <main class="min-h-dvh" @click="closeSideMenu">
