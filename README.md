@@ -4,6 +4,10 @@
 
 ## 額外需求
 
+### 主頁面九宮格動畫
+
+2. 或許可以用 inline style 指定座標位置 搭配 transition 定義過度效果
+
 ### 側邊選單
 
 1. 將名稱整理成麵包屑，跑forEach 對應 Key 值更改 isExpand 參數
