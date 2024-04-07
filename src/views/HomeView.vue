@@ -26,43 +26,12 @@
       </div>
     </div>
   </div>
-
-  <div
-    :style="{ transform: 'translate(' + xPos + 'px, ' + yPos + 'px)' }"
-    class="w-[30px] h-[30px] bg-[#A5F12B] rounded-full animated-element"
-  >
-    <!-- 內容在這裡 -->
-  </div>
-  <div @click="moveElement(100, 200)">Move</div>
 </template>
 
 <script setup>
 import Ball from '@/components/Ball.vue';
 </script>
 
-<script>
-export default {
-  data() {
-    return {
-      xPos: 0, // 初始X座標
-      yPos: 0, // 初始Y座標
-      animationDuration: '1s', // 動畫持續時間
-    };
-  },
-  methods: {
-    moveElement(x, y) {
-      this.xPos = x;
-      this.yPos = y;
-    },
-  },
-  mounted() {
-    // 在此你可以添加初始動畫或其他初始化邏輯
-  },
-};
-</script>
 
 <style scoped>
-.animated-element {
-  transition: transform 1s ease; /* 定義動畫過渡效果 */
-}
 </style>
