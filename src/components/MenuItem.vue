@@ -23,7 +23,7 @@ const props = defineProps({
  * @param {string} 每個節點的唯一值 (key)
  * */
 function toggleMenu(key) {
-  sessionStorage.setItem('sidebarKey', key);
+  localStorage.setItem('sidebarKey', key);
   props.menuList.forEach((childNode) => {
     if (childNode.key == key) {
       childNode.isExpand = true;
@@ -34,4 +34,3 @@ function toggleMenu(key) {
 }
 </script>
 
-<style></style>
