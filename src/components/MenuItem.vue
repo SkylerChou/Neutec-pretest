@@ -26,11 +26,9 @@ function toggleMenu(key) {
   props.menuList.forEach((childNode) => {
     if (childNode.key === key) {
       const keyPath = [];
-      // if (childNode.parentID !== '') {
-        keyPath.push(childNode.parentID);
-        keyPath.push(key);
-        localStorage.setItem('keyPath', JSON.stringify(keyPath));
-      // }
+      keyPath.push(childNode.parentID);
+      keyPath.push(key);
+      localStorage.setItem('keyPath', JSON.stringify(keyPath));
       childNode.isExpand = true;
     } else {
       childNode.isExpand = false;
