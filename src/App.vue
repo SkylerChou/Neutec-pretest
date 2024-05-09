@@ -9,7 +9,7 @@
     enter-from-class="translate-x-full"
     leave-to-class="translate-x-full"
   >
-    <AsideMenu :menuList="menuList" v-show="isOpen" class="z-20" />
+    <AsideMenu v-model:menuList="menuList" v-show="isOpen" class="z-20" />
   </Transition>
 
   <main class="min-h-dvh" @click="closeSideMenu">
@@ -23,6 +23,7 @@ import MenuBtn from '@/components/MenuBtn.vue';
 import AsideMenu from '@/components/AsideMenu.vue';
 import { ref } from 'vue';
 import { MenuTreeList } from '@/mock/data';
+import { onMounted } from 'vue';
 
 /** @const {array} 側邊欄頁面清單 */
 const menuList = ref(MenuTreeList);
@@ -39,6 +40,26 @@ function controSideMenu() {
 function closeSideMenu() {
   isOpen.value = false;
 }
+function toggleMenu(menuList, key) {
+  menuList.forEach((childNode) => {
+    if (childNode.key === key) {
+      console.log(childNode);
+      childNode.isExpand = true;
+    } 
+    if (childNode.children) {
+      toggleMenu(childNode.children, key);
+    }
+  });
+}
+
+onMounted(() => {
+  const history = JSON.parse(localStorage.getItem('keyPath'));
+  if (history) {
+    history.forEach((item) => {
+      toggleMenu(menuList.value, item);
+    });
+  }
+});
 </script>
 
 <style scoped></style>

@@ -23,9 +23,14 @@ const props = defineProps({
  * @param {string} 每個節點的唯一值 (key)
  * */
 function toggleMenu(key) {
-  localStorage.setItem('sidebarKey', key);
   props.menuList.forEach((childNode) => {
-    if (childNode.key == key) {
+    if (childNode.key === key) {
+      const keyPath = [];
+      // if (childNode.parentID !== '') {
+        keyPath.push(childNode.parentID);
+        keyPath.push(key);
+        localStorage.setItem('keyPath', JSON.stringify(keyPath));
+      // }
       childNode.isExpand = true;
     } else {
       childNode.isExpand = false;
