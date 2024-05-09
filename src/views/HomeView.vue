@@ -33,5 +33,4 @@ import Ball from '@/components/Ball.vue';
 </script>
 
 
-<style scoped>
-</style>
+<style scoped></style>
